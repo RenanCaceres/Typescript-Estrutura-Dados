@@ -1,0 +1,23 @@
+{
+  "name": "typescript-estrutura-dados",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenanCaceres/Typescript-Estrutura-Dados.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RenanCaceres/Typescript-Estrutura-Dados/issues"
+  },
+  "homepage": "https://github.com/RenanCaceres/Typescript-Estrutura-Dados#readme",
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
