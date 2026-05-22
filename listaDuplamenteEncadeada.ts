@@ -13,10 +13,10 @@ class Node<T> {
 }
 
 class ListaDuplamenteEncadeada<T> {
-    inicio: Node<T> | null;
-    fim: Node<T> | null;
+    inicio: Node<T> | null;     // Primeiro nó
+    fim: Node<T> | null;        // Último nó
 
-    // Inicializa a lista vazia
+    // Inicializa a lista vazia (equivalente ao cria_lista())
     constructor() {
         this.inicio = null;
         this.fim = null;
@@ -26,8 +26,8 @@ class ListaDuplamenteEncadeada<T> {
         // Cria novo nó
         const no = new Node(dados);
 
-        // Lista vazia
-        if (this.inicio == null) {
+        // Lista vazia, então o novo nó é único
+        if (this.inicio === null) {
             this.inicio = no;
             this.fim = no;
             return true;
@@ -41,11 +41,40 @@ class ListaDuplamenteEncadeada<T> {
         return true;
     }
 
-    inserirFinal() {
+    inserirFinal(dados: T): boolean {
+        const no = new Node(dados);
 
+        if (this.inicio === null) {
+            this.inicio = no;
+            this.fim = no;
+            return true;
+        }
+
+        no.anterior = this.fim;
+
+        if (this.fim !== null) {
+            this.fim.proximo = no;
+        }
+        this.fim = no;
+
+        return true;
     }
 
-    imprimirLista() {
+    imprimirLista(): void {
+        if (this.inicio === null) {
+            console.log("A lista está vazia");
+            return;
+        }
 
+        let atual: Node<T> | null = this.inicio;
+
+        console.log("\n* LISTA *\n");
+
+        while (atual !== null) {
+            console.log(atual.dados);
+            atual = atual.proximo;
+        }
     }
 }
+
+export default ListaDuplamenteEncadeada;
