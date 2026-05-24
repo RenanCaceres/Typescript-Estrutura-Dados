@@ -1,10 +1,6 @@
 # 📘 Projeto TypeScript: Lista Duplamente Encadeada
 
-## 🛠️ 1. Configuração do Ambiente
-
----
-
-## 📝 2. Sintaxe Básica do TypeScript
+## 📝 1. Sintaxe Básica do TypeScript
 
 ```typescript
 // Tipos primitivos
@@ -30,7 +26,7 @@ function identidade<T>(valor: T): T {
 
 ---
 
-## 🌍 3. Hello World
+## 🌍 2. Hello World
 
 ```typescript
 function helloWorld(): void {
@@ -45,7 +41,7 @@ npm run build && npm start
 
 ---
 
-## 🔗 4. Lista Duplamente Encadeada
+## 🔗 3. Lista Duplamente Encadeada
 
 Diferente da lista simples, cada nó possui ponteiros para o **próximo** e o **anterior**, permitindo percorrimento nos dois sentidos e remoção eficiente sem percorrer a lista toda.
 
