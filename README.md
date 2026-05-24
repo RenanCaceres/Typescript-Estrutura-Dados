@@ -26,7 +26,7 @@ function identidade<T>(valor: T): T {
 
 ---
 
-## 🌍 2. Hello World
+## 🌍 2. Hello World 
 
 ```typescript
 function helloWorld(): void {
