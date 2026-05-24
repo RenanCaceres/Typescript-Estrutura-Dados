@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/RenanCaceres/Typescript-Estrutura-Dados#readme",
   "devDependencies": {
+    "tsx": "^4.22.3",
     "typescript": "^6.0.3"
   }
 }
