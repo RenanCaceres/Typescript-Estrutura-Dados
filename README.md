@@ -1,4 +1,4 @@
-# 📘 Projeto TypeScript — Lista Duplamente Encadeada
+# 📘 Projeto TypeScript: Lista Duplamente Encadeada
 
 ## 🛠️ 1. Configuração do Ambiente
 
