@@ -1,6 +1,6 @@
-# 📘 Projeto TypeScript — Lista Encadeada
+# 📘 Projeto TypeScript: Lista Encadeada
 
-Projeto desenvolvido para a atividade acadêmica de apresentação de linguagem de programação.
+Projeto desenvolvido para a atividade acadêmica de apresentação de Estrutura de Dados.
 
 ---
 
