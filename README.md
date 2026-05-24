@@ -145,36 +145,6 @@ npm run build
 npm start
 ```
 
-Saída esperada no terminal:
-
-```
-Hello, World!
-Bem-vindo ao TypeScript!
-
-========================================
-  LISTA ENCADEADA — DEMONSTRAÇÃO
-========================================
-
---- Inserção ---
-✅ Inserido: Maçã
-✅ Inserido: Banana
-...
-```
-
----
-
-## 📁 Estrutura do Projeto
-
-```
-projeto-typescript/
-├── src/
-│   └── index.ts        # Código principal
-├── dist/               # Código compilado (gerado pelo tsc)
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
 ---
 
 ## 📚 Referências
