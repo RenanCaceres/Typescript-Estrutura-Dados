@@ -1,74 +1,30 @@
-# 📘 Projeto TypeScript: Lista Encadeada
+# 📘 Projeto TypeScript — Lista Duplamente Encadeada
 
-Projeto desenvolvido para a atividade acadêmica de apresentação de Estrutura de Dados.
-
----
-
-## 🛠️ 1. Configuração do Ambiente de Desenvolvimento
-
-### Pré-requisitos
-
-- **Node.js** (versão 18 ou superior) — [nodejs.org](https://nodejs.org)
-- **npm** (instalado junto com o Node.js)
-- **Editor recomendado**: VS Code — [code.visualstudio.com](https://code.visualstudio.com)
+## 🛠️ 1. Configuração do Ambiente
 
 ---
 
 ## 📝 2. Sintaxe Básica do TypeScript
 
-TypeScript é um **superset tipado** do JavaScript. Todo código JavaScript válido é TypeScript válido.
-
-### Tipos Primitivos
-
 ```typescript
+// Tipos primitivos
 const nome: string = "TypeScript";
 const versao: number = 5.0;
 const ativo: boolean = true;
-```
 
-### Arrays e Tuplas
-
-```typescript
-const frutas: string[] = ["maçã", "banana"];
-const coordenada: [number, number] = [10, 20];
-```
-
-### Interface
-
-```typescript
+// Interface
 interface Pessoa {
   nome: string;
   idade: number;
-  email?: string; // campo opcional
+  email?: string; // opcional
 }
-```
 
-### Enum
+// Enum
+enum Status { Ativo = "ATIVO", Inativo = "INATIVO" }
 
-```typescript
-enum Direcao {
-  Norte = "NORTE",
-  Sul   = "SUL",
-}
-```
-
-### Generics
-
-```typescript
+// Generics
 function identidade<T>(valor: T): T {
   return valor;
-}
-```
-
-### Classes
-
-```typescript
-class Animal {
-  constructor(private nome: string) {}
-
-  falar(): void {
-    console.log(`${this.nome} fez um som.`);
-  }
 }
 ```
 
@@ -79,76 +35,72 @@ class Animal {
 ```typescript
 function helloWorld(): void {
   console.log("Hello, World!");
-  console.log("Bem-vindo ao TypeScript!");
 }
-
 helloWorld();
 ```
 
-**Executar:**
-
 ```bash
-# Compilar e rodar
 npm run build && npm start
-
-# Ou rodar diretamente (requer ts-node)
-npm run dev
 ```
 
 ---
 
-## 🔗 4. Lista Encadeada
+## 🔗 4. Lista Duplamente Encadeada
 
-Implementação de uma **Lista Encadeada Genérica** com os seguintes métodos:
+Diferente da lista simples, cada nó possui ponteiros para o **próximo** e o **anterior**, permitindo percorrimento nos dois sentidos e remoção eficiente sem percorrer a lista toda.
 
-| Método          | Descrição                                   |
-|-----------------|---------------------------------------------|
-| `inserir(v)`    | Insere ao final da lista                    |
-| `inserirEm(i,v)`| Insere em posição específica                |
-| `ler(i)`        | Lê o valor no índice `i`                    |
-| `percorrer()`   | Exibe todos os elementos                    |
-| `buscar(v)`     | Retorna o índice do valor buscado           |
-| `editar(i, v)`  | Substitui o valor na posição `i`            |
-| `excluir(i)`    | Remove o elemento na posição `i`            |
+```
+null ← [Abacaxi] ⇄ [Banana] ⇄ [Cereja] → null
+         ↑ cabeca                  ↑ cauda
+```
 
-### Exemplo de uso
+### Nó
 
 ```typescript
-const lista = new ListaEncadeada<string>();
-
-lista.inserir("Maçã");
-lista.inserir("Banana");
-lista.inserir("Cereja");
-
-lista.percorrer();
-// 📋 Lista [3 elementos]: Maçã → Banana → Cereja
-
-lista.editar(1, "Melancia");
-lista.excluir(0);
-
-lista.percorrer();
-// 📋 Lista [2 elementos]: Melancia → Cereja
+class No<T> {
+  valor: T;
+  proximo: No<T> | null = null;
+  anterior: No<T> | null = null;
+}
 ```
 
----
+### Métodos disponíveis
 
-## ▶️ Como executar
+| Método              | Descrição                              |
+|---------------------|----------------------------------------|
+| `inserir(v)`        | Insere no final                        |
+| `inserirNoInicio(v)`| Insere no início                       |
+| `inserirEm(i, v)`   | Insere em posição específica           |
+| `ler(i)`            | Lê o valor no índice `i`              |
+| `percorrer()`       | Exibe do início ao fim (→)            |
+| `percorrerInverso()`| Exibe do fim ao início (←)            |
+| `buscar(v)`         | Retorna o índice do valor              |
+| `editar(i, v)`      | Substitui o valor na posição `i`      |
+| `excluir(i)`        | Remove o nó na posição `i`            |
 
-```bash
-# Instalar dependências
-npm install
+### Exemplo
 
-# Compilar TypeScript
-npm run build
+```typescript
+const lista = new ListaDuplamenteEncadeada<string>();
 
-# Executar
-npm start
+lista.inserir("Banana");
+lista.inserirNoInicio("Abacaxi");
+lista.inserirEm(1, "Melancia");
+
+lista.percorrer();
+// 📋 [3 elementos] Abacaxi ⇄ Melancia ⇄ Banana
+
+lista.percorrerInverso();
+// 🔃 [inverso] Banana ⇄ Melancia ⇄ Abacaxi
+
+lista.editar(0, "Caju");
+lista.excluir(1);
+lista.percorrer();
+// 📋 [2 elementos] Caju ⇄ Banana
 ```
 
 ---
 
 ## 📚 Referências
-
-- [Documentação oficial TypeScript](https://www.typescriptlang.org/docs/)
+- [TypeScript Docs](https://www.typescriptlang.org/docs/)
 - [TypeScript Playground](https://www.typescriptlang.org/play)
-- [Node.js](https://nodejs.org)
