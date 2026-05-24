@@ -12,27 +12,6 @@ Projeto desenvolvido para a atividade acadêmica de apresentação de linguagem 
 - **npm** (instalado junto com o Node.js)
 - **Editor recomendado**: VS Code — [code.visualstudio.com](https://code.visualstudio.com)
 
-### Instalação do TypeScript
-
-```bash
-# Instalar TypeScript globalmente
-npm install -g typescript
-
-# Verificar a instalação
-tsc --version
-```
-
-### Clonando e configurando o projeto
-
-```bash
-# Clonar o repositório
-git clone https://github.com/SEU_USUARIO/projeto-typescript.git
-cd projeto-typescript
-
-# Instalar dependências
-npm install
-```
-
 ---
 
 ## 📝 2. Sintaxe Básica do TypeScript
