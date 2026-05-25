@@ -54,7 +54,7 @@ null ← [Abacaxi] ⇄ [Banana] ⇄ [Cereja] → null
 
 ```typescript
 class No<T> {
-  valor: T;
+  dados: T;
   proximo: No<T> | null = null;
   anterior: No<T> | null = null;
 }
