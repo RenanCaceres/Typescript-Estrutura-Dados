@@ -62,25 +62,25 @@ class No<T> {
 
 ### Métodos disponíveis
 
-| Método                   | Descrição                              |
-|------------------------- |----------------------------------------|
-| `inserirNoInicio(v)`                           | Insere no início                           |
-| `inserirFinal(dados: T)`                       | Insere no final                            |
-| `imprimirLista()`                              | Exibe do início ao fim (→)                 |
-| `buscaElemento(dados: T)`                      | Busca um elemento na lista pelo valor      |
-| `editaElemento(dadosAntigos: T, dadosNovos: T)`| Substitui o dado diretamente no nó         |
-| `removeInicio()`                               | Remove o primeiro nó da lista              |
-| `removeFinal()`                                | Remove o último nó da lista                |
-| `removeMeio()`                                 | Remove um nó pelo valor                    
+| Método                                             | Descrição                                  |
+|----------------------------------------------------|--------------------------------------------|
+| `inserirInicio(v)`                                 | Insere no início                           |
+| `inserirFinal(dados: T)`                           | Insere no final                            |
+| `imprimirLista()`                                  | Exibe do início ao fim (→)                 |
+| `buscaElemento(dados: T)`                          | Busca um elemento na lista pelo valor      |
+| `editaElemento(dadosAntigos: T, dadosNovos: T)`    | Substitui o dado diretamente no nó         |
+| `removeInicio()`                                   | Remove o primeiro nó da lista              |
+| `removeFinal()`                                    | Remove o último nó da lista                |
+| `removeMeio()`                                     | Remove um nó pelo valor                    
 
 ### Exemplo
 
 ```typescript
 const lista = new ListaDuplamenteEncadeada<string>();
 
-lista.inserirNoFinal("Banana");
-lista.inserirNoFinal("Abacaxi");
-lista.inserirNoInicio("Melancia");
+lista.inserirFinal("Banana");
+lista.inserirFinal("Abacaxi");
+lista.inserirInicio("Melancia");
 
 lista.imprimirLista();
 // 📋 [3 elementos] Melancia ⇄ Banana ⇄ Abacaxi
