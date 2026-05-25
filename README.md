@@ -62,37 +62,33 @@ class No<T> {
 
 ### Métodos disponíveis
 
-| Método              | Descrição                              |
-|---------------------|----------------------------------------|
-| `inserir(v)`        | Insere no final                        |
-| `inserirNoInicio(v)`| Insere no início                       |
-| `inserirEm(i, v)`   | Insere em posição específica           |
-| `ler(i)`            | Lê o valor no índice `i`              |
-| `percorrer()`       | Exibe do início ao fim (→)            |
-| `percorrerInverso()`| Exibe do fim ao início (←)            |
-| `buscar(v)`         | Retorna o índice do valor              |
-| `editar(i, v)`      | Substitui o valor na posição `i`      |
-| `excluir(i)`        | Remove o nó na posição `i`            |
+| Método                   | Descrição                              |
+|------------------------- |----------------------------------------|
+| `inserirNoInicio(v)`                           | Insere no início                           |
+| `inserirFinal(dados: T)`                       | Insere no final                            |
+| `imprimirLista()`                              | Exibe do início ao fim (→)                 |
+| `buscaElemento(dados: T)`                      | Busca um elemento na lista pelo valor      |
+| `editaElemento(dadosAntigos: T, dadosNovos: T)`| Substitui o dado diretamente no nó         |
+| `removeInicio()`                               | Remove o primeiro nó da lista              |
+| `removeFinal()`                                | Remove o último nó da lista                |
+| `removeMeio()`                                 | Remove um nó pelo valor                    
 
 ### Exemplo
 
 ```typescript
 const lista = new ListaDuplamenteEncadeada<string>();
 
-lista.inserir("Banana");
-lista.inserirNoInicio("Abacaxi");
-lista.inserirEm(1, "Melancia");
+lista.inserirNoFinal("Banana");
+lista.inserirNoFinal("Abacaxi");
+lista.inserirNoInicio("Melancia");
 
-lista.percorrer();
-// 📋 [3 elementos] Abacaxi ⇄ Melancia ⇄ Banana
+lista.imprimirLista();
+// 📋 [3 elementos] Melancia ⇄ Banana ⇄ Abacaxi
 
-lista.percorrerInverso();
-// 🔃 [inverso] Banana ⇄ Melancia ⇄ Abacaxi
-
-lista.editar(0, "Caju");
-lista.excluir(1);
-lista.percorrer();
-// 📋 [2 elementos] Caju ⇄ Banana
+lista.editaElemento(0, "Caju");
+lista.removeFinal(1);
+lista.imprimirLista();
+// 📋 [2 elementos] Caju ⇄ Abacaxi
 ```
 
 ---
